@@ -1,5 +1,5 @@
 # Descarrega una imatge base amb Apache i PHP 8.3
-FROM php:8.3-apache
+FROM php:8.2-apache
 
 # Defineix el directori de treball
 WORKDIR /var/www/html

@@ -1,11 +1,11 @@
-# Descarrega una imatge base amb Apache i PHP 8.3
-FROM php:8.2-apache
+# Imatge base amb PHP i servidor integrat
+FROM php:8.2-cli
 
-# Defineix el directori de treball
+# Directori de treball
 WORKDIR /var/www/html
 
-# Copia la carpeta app dins del contenidor
-COPY app .
+# Copiem el codi de l'aplicació
+COPY app/ .
 
-# Exposa el port 80/tcp
-EXPOSE 80
+# Executem el servidor web integrat de PHP
+CMD ["php", "-S", "0.0.0.0:80", "-t", "/var/www/html"]
